@@ -529,9 +529,6 @@
     .pose-dance{ animation: mikoDance 1s ease-in-out infinite; }
     .pose-dance .armL{ animation: danceArmLeft .75s ease-in-out infinite alternate; }
     .pose-dance .armR{ animation: danceArmRight .75s ease-in-out infinite alternate; }
-    .pose-dance-daikichi{ animation: mikoDanceDaikichi 2.6s ease-in-out infinite; }
-    .pose-dance-daikichi .armL{ animation: danceArmLeftDaikichi 2.6s ease-in-out infinite; }
-    .pose-dance-daikichi .armR{ animation: danceArmRightDaikichi 2.6s ease-in-out infinite; }
     .pose-dance-rare{ animation: mikoDanceRare .85s ease-in-out infinite; }
     .pose-dance-rare .armL{ animation: danceArmLeft .5s ease-in-out infinite alternate; }
     .pose-dance-rare .armR{ animation: danceArmRight .5s ease-in-out infinite alternate; }
@@ -582,45 +579,11 @@
       25%{ transform: rotate(-5deg) translateY(-2px); }
       75%{ transform: rotate(5deg) translateY(-2px); }
     }
-    @keyframes mikoDanceDaikichi{
-      0%,100%{ transform: rotate(0deg) translateY(0) scale(1); }
-      10%{ transform: rotate(-6deg) translateY(-1px) scale(1.01); }
-      20%{ transform: rotate(6deg) translateY(-2px) scale(1.01); }
-      30%{ transform: rotate(-5deg) translateY(-1px) scale(1.01); }
-      40%{ transform: rotate(5deg) translateY(-2px) scale(1.01); }
-      50%{ transform: rotate(-4deg) translateY(-1px) scale(1.01); }
-      60%{ transform: rotate(4deg) translateY(-2px) scale(1.01); }
-      72%{ transform: rotate(0deg) translateY(0) scale(1.01); }
-      84%{ transform: rotate(0deg) translateY(-3px) scale(1.04); }
-      92%{ transform: rotate(360deg) translateY(-1px) scale(1.04); }
-    }
     @keyframes mikoDanceRare{
       0%,100%{ transform: rotate(0deg) translateY(0) scale(1); }
       25%{ transform: rotate(-7deg) translateY(-3px) scale(1.02); }
       50%{ transform: rotate(0deg) translateY(-1px) scale(1.04); }
       75%{ transform: rotate(7deg) translateY(-3px) scale(1.02); }
-    }
-    @keyframes danceArmLeftDaikichi{
-      0%,100%{ transform: rotate(14deg) translateY(0); }
-      10%{ transform: rotate(24deg) translateY(-1px); }
-      20%{ transform: rotate(-8deg) translateY(-2px); }
-      30%{ transform: rotate(22deg) translateY(-1px); }
-      40%{ transform: rotate(-6deg) translateY(-2px); }
-      50%{ transform: rotate(20deg) translateY(-1px); }
-      60%{ transform: rotate(-4deg) translateY(-2px); }
-      84%{ transform: rotate(28deg) translateY(-3px); }
-      92%{ transform: rotate(-18deg) translateY(-2px); }
-    }
-    @keyframes danceArmRightDaikichi{
-      0%,100%{ transform: rotate(-14deg) translateY(0); }
-      10%{ transform: rotate(-24deg) translateY(-1px); }
-      20%{ transform: rotate(8deg) translateY(-2px); }
-      30%{ transform: rotate(-22deg) translateY(-1px); }
-      40%{ transform: rotate(6deg) translateY(-2px); }
-      50%{ transform: rotate(-20deg) translateY(-1px); }
-      60%{ transform: rotate(4deg) translateY(-2px); }
-      84%{ transform: rotate(-28deg) translateY(-3px); }
-      92%{ transform: rotate(18deg) translateY(-2px); }
     }
     @keyframes danceArmLeft{
       from{ transform: rotate(30deg) translateY(-1px); }
@@ -1004,7 +967,7 @@
     }
 
     const MIKO_EXPRESSIONS = ["expr-smile", "expr-neutral", "expr-surprise", "expr-big-smile"];
-    const MIKO_POSES = ["pose-smile", "pose-cheer", "pose-dance", "pose-dance-daikichi", "pose-dance-rare"];
+    const MIKO_POSES = ["pose-smile", "pose-cheer", "pose-dance", "pose-dance-rare"];
 
     function setMikoPerformance(grade){
       const avatar = document.getElementById("mikoAvatar");
@@ -1018,7 +981,7 @@
         return "「大吉です。祝福の舞をお届けしますね。」";
       }
       if(grade === "大吉"){
-        avatar.classList.add("expr-big-smile", "pose-dance-daikichi");
+        avatar.classList.add("expr-big-smile", "pose-smile");
         return "「今日は大吉。とても良い流れですよ。」";
       }
       if(grade === "吉" || grade === "中吉" || grade === "小吉"){
