@@ -156,7 +156,6 @@
       filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
       transform-origin: 50% 80%;
     }
-    .mikoAvatar *{ box-sizing:border-box; }
     .hair{
       position:absolute;
       left:10px; top:10px;
@@ -294,213 +293,6 @@
       transform: rotate(-10deg);
       box-shadow: 0 6px 12px rgba(0,0,0,.12);
     }
-    .hanaKanmuri{
-      position:absolute;
-      left:-4px; top:-8px;
-      width:80px; height:32px;
-      opacity:0;
-      transform: translateY(4px) scale(.88);
-      pointer-events:none;
-    }
-    .kanzashiFlower{
-      position:absolute;
-      width:18px; height:18px;
-      border-radius:50%;
-      box-shadow: 0 3px 7px rgba(0,0,0,.12);
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.95) 0 10%, transparent 11%),
-        radial-gradient(circle at 50% 0, currentColor 0 34%, transparent 35%),
-        radial-gradient(circle at 100% 50%, currentColor 0 34%, transparent 35%),
-        radial-gradient(circle at 50% 100%, currentColor 0 34%, transparent 35%),
-        radial-gradient(circle at 0 50%, currentColor 0 34%, transparent 35%),
-        radial-gradient(circle at 18% 18%, currentColor 0 26%, transparent 27%),
-        radial-gradient(circle at 82% 18%, currentColor 0 26%, transparent 27%),
-        radial-gradient(circle at 18% 82%, currentColor 0 26%, transparent 27%),
-        radial-gradient(circle at 82% 82%, currentColor 0 26%, transparent 27%);
-    }
-    .kanzashiFlower.k1{ left:4px; top:8px; color:#fff8fb; }
-    .kanzashiFlower.k2{ left:18px; top:2px; color:#ffc1cb; }
-    .kanzashiFlower.k3{ left:32px; top:8px; color:#f5f09a; }
-    .kanzashiFlower.k4{ left:48px; top:0; color:#ffd7b5; }
-    .kanzashiFlower.k5{ left:60px; top:8px; color:#fff8fb; }
-    .kanzashiLeaf{
-      position:absolute;
-      width:16px; height:8px;
-      background: linear-gradient(90deg, #4d8f46, #2f6b30);
-      border-radius: 100% 0 100% 0;
-      opacity:.9;
-    }
-    .kanzashiLeaf.l1{ left:10px; top:14px; transform: rotate(-24deg); }
-    .kanzashiLeaf.l2{ left:52px; top:12px; transform: rotate(18deg) scaleX(-1); }
-    .kanzashiComb{
-      position:absolute;
-      left:18px; top:18px;
-      width:44px; height:14px;
-    }
-    .kanzashiComb::before{
-      content:"";
-      position:absolute;
-      left:0; top:0;
-      width:100%; height:3px;
-      border-radius:999px;
-      background: linear-gradient(90deg, rgba(140,140,140,.95), rgba(230,230,230,.95), rgba(140,140,140,.95));
-      box-shadow: 0 1px 2px rgba(255,255,255,.55);
-    }
-    .kanzashiComb::after{
-      content:"";
-      position:absolute;
-      left:4px; top:2px;
-      width:36px; height:18px;
-      background: repeating-linear-gradient(90deg, rgba(230,230,230,.95) 0 2px, transparent 2px 6px);
-      opacity:.9;
-      clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-    }
-    .suzu{
-      position:absolute;
-      right:-12px; top:36px;
-      width:20px; height:32px;
-      opacity:0;
-      transform: rotate(-10deg) scale(.8);
-      filter: drop-shadow(0 5px 8px rgba(0,0,0,.15));
-      pointer-events:none;
-    }
-    .suzuRing{
-      position:absolute;
-      left:7px; top:0;
-      width:6px; height:12px;
-      border-radius:999px;
-      background: linear-gradient(180deg, #8b2e37, #cf6877);
-    }
-    .suzuHead{
-      position:absolute;
-      left:2px; top:8px;
-      width:16px; height:16px;
-      border-radius:50%;
-      background: radial-gradient(circle at 35% 30%, #fff8c4, #f6c746 55%, #d69516 100%);
-      border:1px solid rgba(163,101,0,.28);
-    }
-    .suzuHead::after{
-      content:"";
-      position:absolute;
-      left:50%; top:10px;
-      width:4px; height:4px;
-      background: rgba(146,87,0,.55);
-      border-radius:50%;
-      transform: translateX(-50%);
-    }
-    .suzuStrip{
-      position:absolute;
-      top:20px;
-      width:3px; height:14px;
-      border-radius:999px;
-      background: linear-gradient(180deg, #fffef9, #ece7dc);
-    }
-    .suzuStrip.r1{ left:3px; transform: rotate(-10deg); }
-    .suzuStrip.r2{ left:8px; }
-    .suzuStrip.r3{ left:13px; transform: rotate(10deg); }
-    .sakuraBranch{
-      position:absolute;
-      left:-28px; top:34px;
-      width:40px; height:34px;
-      opacity:0;
-      transform: rotate(-18deg) scale(.84);
-      filter: drop-shadow(0 4px 7px rgba(0,0,0,.12));
-      pointer-events:none;
-    }
-    .sakuraStem{
-      position:absolute;
-      left:10px; top:10px;
-      width:4px; height:24px;
-      background: linear-gradient(180deg, #73513b, #4d2e20);
-      border-radius:999px;
-      transform: rotate(18deg);
-    }
-    .sakuraTwig{
-      position:absolute;
-      left:10px; top:12px;
-      width:20px; height:3px;
-      background: linear-gradient(90deg, #6b4631, #8b5c44);
-      border-radius:999px;
-      transform-origin:left center;
-    }
-    .sakuraTwig.t1{ transform: rotate(-28deg); }
-    .sakuraTwig.t2{ top:18px; transform: rotate(12deg); width:18px; }
-    .sakuraTwig.t3{ top:8px; left:8px; transform: rotate(-58deg); width:16px; }
-    .sakuraLeaf{
-      position:absolute;
-      width:10px; height:6px;
-      background: linear-gradient(90deg, #7ca75e, #3e7d3a);
-      border-radius: 100% 0 100% 0;
-    }
-    .sakuraLeaf.sl1{ left:2px; top:18px; transform: rotate(-18deg); }
-    .sakuraLeaf.sl2{ left:20px; top:8px; transform: rotate(28deg) scaleX(-1); }
-    .sakuraLeaf.sl3{ left:17px; top:20px; transform: rotate(8deg) scaleX(-1); }
-    .sakuraBlossom{
-      position:absolute;
-      width:14px; height:14px;
-      border-radius:50%;
-      box-shadow: 0 2px 6px rgba(255,155,177,.18);
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,245,196,.95) 0 12%, transparent 13%),
-        radial-gradient(circle at 50% 0, #ffe8ee 0 34%, transparent 35%),
-        radial-gradient(circle at 100% 50%, #ffd5df 0 34%, transparent 35%),
-        radial-gradient(circle at 50% 100%, #ffe8ee 0 34%, transparent 35%),
-        radial-gradient(circle at 0 50%, #ffd5df 0 34%, transparent 35%),
-        radial-gradient(circle at 22% 20%, #fff2f6 0 26%, transparent 27%),
-        radial-gradient(circle at 78% 20%, #ffd1de 0 26%, transparent 27%),
-        radial-gradient(circle at 22% 80%, #fff2f6 0 26%, transparent 27%),
-        radial-gradient(circle at 78% 80%, #ffd1de 0 26%, transparent 27%);
-    }
-    .sakuraBlossom.sb1{ left:18px; top:2px; }
-    .sakuraBlossom.sb2{ left:24px; top:14px; transform: scale(.92); }
-    .sakuraBlossom.sb3{ left:6px; top:10px; transform: scale(.86); }
-    .premiumBloom{
-      position:absolute;
-      inset:-20px -18px -8px;
-      pointer-events:none;
-      opacity:0;
-    }
-    .bloom{
-      position:absolute;
-      width:18px; height:18px;
-      border-radius:50%;
-      opacity:0;
-      transform: scale(.2);
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,245,196,.95) 0 12%, transparent 13%),
-        radial-gradient(circle at 50% 0, #ffe7ef 0 34%, transparent 35%),
-        radial-gradient(circle at 100% 50%, #ffd6e1 0 34%, transparent 35%),
-        radial-gradient(circle at 50% 100%, #ffe7ef 0 34%, transparent 35%),
-        radial-gradient(circle at 0 50%, #ffd6e1 0 34%, transparent 35%),
-        radial-gradient(circle at 22% 20%, #fff7fa 0 26%, transparent 27%),
-        radial-gradient(circle at 78% 20%, #ffd5e0 0 26%, transparent 27%),
-        radial-gradient(circle at 22% 80%, #fff7fa 0 26%, transparent 27%),
-        radial-gradient(circle at 78% 80%, #ffd5e0 0 26%, transparent 27%);
-      filter: drop-shadow(0 3px 6px rgba(255,153,186,.25));
-    }
-    .bloom.b1{ left:-4px; top:10px; }
-    .bloom.b2{ left:14px; top:-8px; width:22px; height:22px; }
-    .bloom.b3{ right:8px; top:-10px; }
-    .bloom.b4{ right:-6px; top:18px; width:20px; height:20px; }
-    .bloom.b5{ left:30px; bottom:4px; width:16px; height:16px; }
-    .petalDrift{
-      position:absolute;
-      inset:-16px -10px -6px;
-      pointer-events:none;
-      opacity:0;
-    }
-    .driftPetal{
-      position:absolute;
-      width:13px; height:10px;
-      background: radial-gradient(circle at 30% 30%, #fff6fa, rgba(255,179,200,.95) 68%, rgba(255,179,200,0) 100%);
-      border-radius: 85% 18% 85% 18%;
-      opacity:0;
-    }
-    .driftPetal.p1{ left:-4px; top:6px; }
-    .driftPetal.p2{ left:20px; top:-8px; width:11px; height:9px; }
-    .driftPetal.p3{ right:8px; top:-2px; }
-    .driftPetal.p4{ right:-2px; top:18px; width:12px; height:9px; }
-    .driftPetal.p5{ left:16px; bottom:-2px; width:10px; height:8px; }
     .sparkles{
       position:absolute;
       inset:-22px;
@@ -533,19 +325,6 @@
     .pose-dance-rare .armL{ animation: danceArmLeft .5s ease-in-out infinite alternate; }
     .pose-dance-rare .armR{ animation: danceArmRight .5s ease-in-out infinite alternate; }
     .pose-dance-rare .paperMini{ animation: paperWave .55s ease-in-out infinite alternate; }
-    .pose-dance-rare .paperMini{ opacity:0; }
-    .pose-dance-rare .hanaKanmuri{
-      opacity:1;
-      animation: crownBloom .9s ease-out both;
-    }
-    .pose-dance-rare .suzu{
-      opacity:1;
-      animation: suzuSwing .75s ease-in-out infinite alternate;
-    }
-    .pose-dance-rare .sakuraBranch{
-      opacity:1;
-      animation: branchWave .95s ease-in-out infinite alternate;
-    }
     .pose-dance-rare .sparkles{ opacity:1; }
     .pose-dance-rare .sparkle{ animation: sparkleFloat .95s ease-in-out infinite; }
     .pose-dance-rare .sparkle.s1{ animation-delay:.05s; }
@@ -553,18 +332,6 @@
     .pose-dance-rare .sparkle.s3{ animation-delay:.28s; }
     .pose-dance-rare .sparkle.s4{ animation-delay:.42s; }
     .pose-dance-rare .sparkle.s5{ animation-delay:.56s; }
-    .pose-dance-rare .premiumBloom{ opacity:1; }
-    .pose-dance-rare .bloom{ animation: bloomOpen 1.8s ease-in-out infinite; }
-    .pose-dance-rare .bloom.b2{ animation-delay:.15s; }
-    .pose-dance-rare .bloom.b3{ animation-delay:.4s; }
-    .pose-dance-rare .bloom.b4{ animation-delay:.6s; }
-    .pose-dance-rare .bloom.b5{ animation-delay:.85s; }
-    .pose-dance-rare .petalDrift{ opacity:1; }
-    .pose-dance-rare .driftPetal{ animation: petalSwirl 1.9s ease-in-out infinite; }
-    .pose-dance-rare .driftPetal.p2{ animation-delay:.22s; }
-    .pose-dance-rare .driftPetal.p3{ animation-delay:.48s; }
-    .pose-dance-rare .driftPetal.p4{ animation-delay:.72s; }
-    .pose-dance-rare .driftPetal.p5{ animation-delay:.96s; }
 
     @keyframes cheerArmLeft{
       from{ transform: rotate(8deg) translateY(0); }
@@ -602,31 +369,6 @@
       25%{ opacity:1; transform: translateY(0) scale(1.15) rotate(18deg); }
       60%{ opacity:1; transform: translateY(-12px) scale(1) rotate(38deg); }
       100%{ opacity:0; transform: translateY(-26px) scale(.7) rotate(64deg); }
-    }
-    @keyframes crownBloom{
-      0%{ opacity:0; transform: translateY(5px) scale(.8); }
-      65%{ opacity:1; transform: translateY(-1px) scale(1.06); }
-      100%{ opacity:1; transform: translateY(0) scale(1); }
-    }
-    @keyframes suzuSwing{
-      from{ transform: rotate(-16deg) translateY(-1px); }
-      to{ transform: rotate(10deg) translateY(-4px); }
-    }
-    @keyframes branchWave{
-      from{ transform: rotate(-26deg) translateY(0) scale(.92); }
-      to{ transform: rotate(-4deg) translateY(-5px) scale(1.02); }
-    }
-    @keyframes bloomOpen{
-      0%,100%{ opacity:0; transform: scale(.2) rotate(-12deg); }
-      20%{ opacity:.95; transform: scale(1.08) rotate(8deg); }
-      55%{ opacity:1; transform: scale(1) rotate(0deg); }
-      80%{ opacity:.75; transform: scale(.92) rotate(-6deg); }
-    }
-    @keyframes petalSwirl{
-      0%{ opacity:0; transform: translate(0, 4px) rotate(0deg) scale(.55); }
-      18%{ opacity:1; transform: translate(4px, -4px) rotate(36deg) scale(1); }
-      52%{ opacity:.95; transform: translate(12px, 8px) rotate(110deg) scale(.92); }
-      100%{ opacity:0; transform: translate(22px, 22px) rotate(200deg) scale(.72); }
     }
 
     .mikoBubble{
@@ -825,16 +567,6 @@
           <div class="sideL"></div><div class="sideR"></div>
           <div class="face"></div>
           <div class="armL"></div><div class="armR"></div>
-          <div class="hanaKanmuri" aria-hidden="true">
-            <div class="kanzashiFlower k1"></div>
-            <div class="kanzashiFlower k2"></div>
-            <div class="kanzashiFlower k3"></div>
-            <div class="kanzashiFlower k4"></div>
-            <div class="kanzashiFlower k5"></div>
-            <div class="kanzashiLeaf l1"></div>
-            <div class="kanzashiLeaf l2"></div>
-            <div class="kanzashiComb"></div>
-          </div>
 
           <!-- 表情パーツ -->
           <div class="eyes">
@@ -846,45 +578,12 @@
           <div class="top"></div>
           <div class="skirt"></div>
           <div class="paperMini"></div>
-          <div class="suzu" aria-hidden="true">
-            <div class="suzuRing"></div>
-            <div class="suzuHead"></div>
-            <div class="suzuStrip r1"></div>
-            <div class="suzuStrip r2"></div>
-            <div class="suzuStrip r3"></div>
-          </div>
-          <div class="sakuraBranch" aria-hidden="true">
-            <div class="sakuraStem"></div>
-            <div class="sakuraTwig t1"></div>
-            <div class="sakuraTwig t2"></div>
-            <div class="sakuraTwig t3"></div>
-            <div class="sakuraLeaf sl1"></div>
-            <div class="sakuraLeaf sl2"></div>
-            <div class="sakuraLeaf sl3"></div>
-            <div class="sakuraBlossom sb1"></div>
-            <div class="sakuraBlossom sb2"></div>
-            <div class="sakuraBlossom sb3"></div>
-          </div>
           <div class="sparkles" aria-hidden="true">
             <div class="sparkle s1"></div>
             <div class="sparkle s2"></div>
             <div class="sparkle s3"></div>
             <div class="sparkle s4"></div>
             <div class="sparkle s5"></div>
-          </div>
-          <div class="premiumBloom" aria-hidden="true">
-            <div class="bloom b1"></div>
-            <div class="bloom b2"></div>
-            <div class="bloom b3"></div>
-            <div class="bloom b4"></div>
-            <div class="bloom b5"></div>
-          </div>
-          <div class="petalDrift" aria-hidden="true">
-            <div class="driftPetal p1"></div>
-            <div class="driftPetal p2"></div>
-            <div class="driftPetal p3"></div>
-            <div class="driftPetal p4"></div>
-            <div class="driftPetal p5"></div>
           </div>
         </div>
         <div class="mikoBubble">
