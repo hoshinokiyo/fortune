@@ -155,8 +155,66 @@
       position:relative;
       filter: drop-shadow(0 10px 14px rgba(0,0,0,.12));
       transform-origin: 50% 80%;
+      transform-style: preserve-3d;
     }
     .mikoAvatar *{ box-sizing:border-box; }
+    .mikoBack{
+      position:absolute;
+      inset:8px 8px 0;
+      opacity:0;
+      pointer-events:none;
+    }
+    .backHair{
+      position:absolute;
+      left:8px; top:4px;
+      width:38px; height:34px;
+      background: radial-gradient(circle at 50% 20%, #3f3f3f, #111 72%);
+      border-radius: 18px 18px 20px 20px;
+      box-shadow: inset 0 2px 0 rgba(255,255,255,.08);
+    }
+    .backHair::after{
+      content:"";
+      position:absolute;
+      left:7px; top:22px;
+      width:24px; height:16px;
+      border-radius: 0 0 14px 14px;
+      background: linear-gradient(180deg, #202020, #090909);
+    }
+    .backRibbon{
+      position:absolute;
+      left:16px; top:26px;
+      width:22px; height:8px;
+      border-radius:999px;
+      background: linear-gradient(90deg, #c94557, #f36b80, #c94557);
+      box-shadow: 0 1px 2px rgba(0,0,0,.16);
+    }
+    .backTop{
+      position:absolute;
+      left:10px; top:38px;
+      width:34px; height:14px;
+      border-radius: 8px 8px 10px 10px;
+      background: linear-gradient(180deg, #ffffff, #eeeeee);
+      border: 1px solid rgba(43,31,18,.08);
+    }
+    .backTop::before{
+      content:"";
+      position:absolute;
+      left:10px; top:1px;
+      width:12px; height:8px;
+      border-radius: 0 0 10px 10px;
+      background: linear-gradient(180deg, #c94557, #8f1422);
+    }
+    .backSleeveL,.backSleeveR{
+      position:absolute;
+      top:41px;
+      width:10px; height:20px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #ffffff, #f3f0ea);
+      border: 1px solid rgba(43,31,18,.08);
+      box-shadow: 0 3px 6px rgba(0,0,0,.08);
+    }
+    .backSleeveL{ left:4px; transform: rotate(26deg); }
+    .backSleeveR{ right:4px; transform: rotate(-26deg); }
     .hair{
       position:absolute;
       left:10px; top:10px;
@@ -593,6 +651,17 @@
     .pose-dance-daikichi{ animation: mikoDanceDaikichi 2.6s ease-in-out infinite; }
     .pose-dance-daikichi .armL{ animation: danceArmLeftDaikichi 2.6s ease-in-out infinite; }
     .pose-dance-daikichi .armR{ animation: danceArmRightDaikichi 2.6s ease-in-out infinite; }
+    .pose-dance-daikichi .hair,
+    .pose-dance-daikichi .face,
+    .pose-dance-daikichi .sideL,
+    .pose-dance-daikichi .sideR,
+    .pose-dance-daikichi .eyes,
+    .pose-dance-daikichi .mouth{
+      animation: daikichiFrontSwap 2.6s linear infinite;
+    }
+    .pose-dance-daikichi .mikoBack{
+      animation: daikichiBackSwap 2.6s linear infinite;
+    }
     .pose-dance-rare{ animation: mikoDanceRare .85s ease-in-out infinite; }
     .pose-dance-rare .armL{ animation: danceArmLeft .5s ease-in-out infinite alternate; }
     .pose-dance-rare .armR{ animation: danceArmRight .5s ease-in-out infinite alternate; }
@@ -644,16 +713,17 @@
       75%{ transform: rotate(5deg) translateY(-2px); }
     }
     @keyframes mikoDanceDaikichi{
-      0%,100%{ transform: rotate(0deg) translateY(0) scale(1); }
-      10%{ transform: rotate(-6deg) translateY(-1px) scale(1.01); }
-      20%{ transform: rotate(6deg) translateY(-2px) scale(1.01); }
-      30%{ transform: rotate(-5deg) translateY(-1px) scale(1.01); }
-      40%{ transform: rotate(5deg) translateY(-2px) scale(1.01); }
-      50%{ transform: rotate(-4deg) translateY(-1px) scale(1.01); }
-      60%{ transform: rotate(4deg) translateY(-2px) scale(1.01); }
-      72%{ transform: rotate(0deg) translateY(0) scale(1.01); }
-      84%{ transform: rotate(0deg) translateY(-3px) scale(1.04); }
-      92%{ transform: rotate(360deg) translateY(-1px) scale(1.04); }
+      0%,100%{ transform: perspective(260px) rotateY(0deg) rotateZ(0deg) translateY(0) scale(1); }
+      10%{ transform: perspective(260px) rotateY(0deg) rotateZ(-6deg) translateY(-1px) scale(1.01); }
+      20%{ transform: perspective(260px) rotateY(0deg) rotateZ(6deg) translateY(-2px) scale(1.01); }
+      30%{ transform: perspective(260px) rotateY(0deg) rotateZ(-5deg) translateY(-1px) scale(1.01); }
+      40%{ transform: perspective(260px) rotateY(0deg) rotateZ(5deg) translateY(-2px) scale(1.01); }
+      50%{ transform: perspective(260px) rotateY(0deg) rotateZ(-4deg) translateY(-1px) scale(1.01); }
+      60%{ transform: perspective(260px) rotateY(0deg) rotateZ(4deg) translateY(-2px) scale(1.01); }
+      70%{ transform: perspective(260px) rotateY(0deg) rotateZ(0deg) translateY(0) scale(1.01); }
+      78%{ transform: perspective(260px) rotateY(90deg) rotateZ(0deg) translateY(-2px) scale(1.03); }
+      86%{ transform: perspective(260px) rotateY(180deg) rotateZ(0deg) translateY(-3px) scale(1.04); }
+      94%{ transform: perspective(260px) rotateY(270deg) rotateZ(0deg) translateY(-2px) scale(1.03); }
     }
     @keyframes mikoDanceRare{
       0%,100%{ transform: rotate(0deg) translateY(0) scale(1); }
@@ -682,6 +752,16 @@
       60%{ transform: rotate(4deg) translateY(-2px); }
       84%{ transform: rotate(-28deg) translateY(-3px); }
       92%{ transform: rotate(18deg) translateY(-2px); }
+    }
+    @keyframes daikichiFrontSwap{
+      0%,74%,100%{ opacity:1; }
+      80%,90%{ opacity:0; }
+      96%{ opacity:1; }
+    }
+    @keyframes daikichiBackSwap{
+      0%,76%,100%{ opacity:0; }
+      82%,90%{ opacity:1; }
+      96%{ opacity:0; }
     }
     @keyframes danceArmLeft{
       from{ transform: rotate(30deg) translateY(-1px); }
@@ -919,6 +999,13 @@
     <div class="mikoWrap" aria-live="polite">
       <div class="miko" id="miko">
         <div class="mikoAvatar" aria-hidden="true" id="mikoAvatar">
+          <div class="mikoBack" aria-hidden="true">
+            <div class="backHair"></div>
+            <div class="backRibbon"></div>
+            <div class="backTop"></div>
+            <div class="backSleeveL"></div>
+            <div class="backSleeveR"></div>
+          </div>
           <div class="hair"></div>
           <div class="sideL"></div><div class="sideR"></div>
           <div class="face"></div>
